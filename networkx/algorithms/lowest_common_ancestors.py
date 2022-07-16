@@ -28,17 +28,17 @@ def naive_all_pairs_lowest_common_ancestor(G, pairs=None):
         The pairs of nodes of interest.
         If None, will find the LCA of all pairs of nodes.
 
-    Returns
-    -------
-    An iterator over ((node1, node2), lca) where (node1, node2) are
-    the pairs specified and lca is a lowest common ancestor of the pair.
-    Note that for the default of all pairs in G, we consider
-    unordered pairs, e.g. you will not get both (b, a) and (a, b).
+    Yields
+    ------
+    Tuples ((node1, node2), lca)
+        where (node1, node2) are the pairs specified and lca is a lowest
+        common ancestor of the pair.  Note that for the default of all pairs
+        in G, we consider unordered pairs, e.g. you will not get both (b, a)
+        and (a, b).
 
     Notes
     -----
     Only defined on non-null directed acyclic graphs.
-
     See Also
     --------
     naive_lowest_common_ancestor
